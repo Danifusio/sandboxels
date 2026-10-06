@@ -1,0 +1,12 @@
+{
+  "name": "sandboxels",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node_modules/.bin/serve -l 3000 .",
+    "start": "node_modules/.bin/serve -l 3000 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
