@@ -44,6 +44,94 @@ body {
 	color: #ffffff;
 	caret-color: #e6d577;
 }
+.welcomeSplash {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.82);
+	transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+.welcomeSplash.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+.welcomeSplashCard {
+	width: min(100%, 520px);
+	box-sizing: border-box;
+	padding: 38px 32px 30px;
+	text-align: center;
+	background: var(--theme-darker);
+	border: 3px solid var(--theme);
+	box-shadow: 8px 8px 0 var(--theme-darkest), 0 0 0 2px var(--theme-darkest2);
+}
+.welcomeSplashEyebrow {
+	margin: 0 0 26px;
+	color: #e6d577;
+	font-size: 0.7em;
+	letter-spacing: 0.12em;
+}
+.welcomeSplashCard h2 {
+	margin: 0;
+	color: #ffffff;
+	font-size: clamp(1.1rem, 4vw, 1.7rem);
+	line-height: 1.6;
+	text-shadow: 3px 3px 0 #000000;
+}
+.welcomeSplashCredit {
+	margin: 12px 0 24px;
+	color: #5ee05e;
+	font-size: clamp(0.75rem, 2.6vw, 1rem);
+}
+.welcomeSplashMessage {
+	max-width: 390px;
+	margin: 0 auto 28px;
+	color: rgba(255, 255, 255, 0.78);
+	font-family: 'VT323', Arial, sans-serif;
+	font-size: 1.35rem;
+	line-height: 1.2;
+}
+.welcomeSplashStart {
+	min-width: 170px;
+	padding: 12px 22px;
+	color: #000000;
+	background: #e6d577;
+	border: 3px solid #ffffff;
+	box-shadow: 4px 4px 0 #000000;
+	font-size: 0.9em;
+}
+.welcomeSplashStart:hover,
+.welcomeSplashStart:focus-visible {
+	filter: brightness(1.15);
+	outline: 2px solid #5ee05e;
+	outline-offset: 3px;
+}
+.welcomeSplashStart:active {
+	transform: translate(2px, 2px);
+	box-shadow: 2px 2px 0 #000000;
+}
+.welcomeSplashOption {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	margin-top: 24px;
+	color: rgba(255, 255, 255, 0.78);
+	font-family: 'VT323', Arial, sans-serif;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+.welcomeSplashOption input {
+	accent-color: #e6d577;
+	width: 17px;
+	height: 17px;
+}
+@media (max-width: 480px) {
+	.welcomeSplashCard { padding: 30px 20px 24px; }
+}
 html.standalone, html.standalone body {
 	background-color: var(--theme-darkest);
 }

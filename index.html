@@ -20850,6 +20850,44 @@ window.onload = function() {
 </head>
 
 <body>
+	<section id="welcomeSplash" class="welcomeSplash" aria-labelledby="welcomeSplashTitle">
+		<div class="welcomeSplashCard" role="dialog" aria-modal="true">
+			<p class="welcomeSplashEyebrow">SANDBOXELS</p>
+			<h2 id="welcomeSplashTitle">Made by R74n</h2>
+			<p class="welcomeSplashCredit">Ported by Danifusio</p>
+			<p class="welcomeSplashMessage">Experiment with pixels, elements, and everything in between.</p>
+			<button id="welcomeSplashStart" class="welcomeSplashStart" type="button">Start</button>
+			<label class="welcomeSplashOption">
+				<input id="welcomeSplashSkip" type="checkbox">
+				<span>Do not show this again</span>
+			</label>
+		</div>
+	</section>
+	<script>
+		(function() {
+			var splash = document.getElementById("welcomeSplash");
+			var startButton = document.getElementById("welcomeSplashStart");
+			var skipCheckbox = document.getElementById("welcomeSplashSkip");
+			var savedSettings = localStorage.getItem("settings");
+			var splashSettings = savedSettings ? JSON.parse(savedSettings) : {};
+
+			if (splashSettings.splashDismissed) {
+				splash.remove();
+				return;
+			}
+
+			function dismissSplash() {
+				if (skipCheckbox.checked) {
+					splashSettings.splashDismissed = true;
+					localStorage.setItem("settings", JSON.stringify(splashSettings));
+				}
+				splash.classList.add("is-hidden");
+				window.setTimeout(function() { splash.remove(); }, 220);
+			}
+
+			startButton.addEventListener("click", dismissSplash);
+		})();
+	</script>
 	<h1 class="pagetitle" id="pagetitle"><a href="https://R74n.com" class="backbutton" target="_blank">&lt;</a></h1>
 	<noscript>You don't have JavaScript enabled! JavaScript is required to play Sandboxels, and most other browser tools.</noscript>
 	<div id="totalWrapper">
